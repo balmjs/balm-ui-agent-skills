@@ -5,8 +5,28 @@ This repository contains official agent skills for [BalmUI](https://material.bal
 ## Available Skills
 
 ### `balm-ui-customization`
-
 A comprehensive guide and workflow protocol for customizing BalmUI styles using Sass variables (`@use ... with`) and minimal CSS overrides. It includes a strict "Discovery Protocol" ensuring AI agents actively search for Material Design Components (`@material`) variables instead of hallucinating them.
+
+### `balm-ui-pro-list-view`
+Guide for building data-driven list pages using BalmUI Pro's `ui-list-view` component, relying on models and configuration rather than raw HTML/CSS.
+
+### `balm-ui-pro-form-view`
+Guide for building standard create/edit form pages using BalmUI Pro's `ui-form-view` component and JSON configuration arrays.
+
+### `balm-ui-pro-detail-view`
+Guide for building read-only detail pages using BalmUI Pro's `ui-detail-view` component and JSON configuration arrays.
+
+### `balm-ui-pro-constants`
+Guide on using the centralized constant and dictionary management (`$constant` plugin) in BalmUI Pro projects to avoid hardcoding enum values.
+
+### `balm-ui-pro-mocking`
+Guide for setting up and handling frontend mock APIs using MirageJS in BalmUI Pro architectures before real backend APIs are available.
+
+### `balm-ui-pro-routing`
+Guide for adding and configuring new pages, routes, and modifying the dynamic sidebar menus in BalmUI Pro layouts.
+
+### `balm-ui-pro-apis`
+Guide for utilizing the `$apiModel` plugin to define and interact with backend APIs, strictly decoupling HTTP requests from UI components.
 
 ## Directory Structure
 
