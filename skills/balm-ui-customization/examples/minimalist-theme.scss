@@ -1,0 +1,60 @@
+// examples/minimalist-theme.scss
+// A clean, minimalist theme with large rounded corners and soft colors
+
+@use 'sass:string';
+
+// 1. Theme Variables
+@use '@material/theme/theme-color' with (
+  $primary: #111111, // Almost black
+  $secondary: #efefef, // Light gray
+  $background: #fcfcfc,
+  $surface: #ffffff,
+  $error: #d32f2f,
+  $text-colors: (
+    dark: (
+      primary: #111111,
+      secondary: #666666,
+      hint: #999999,
+      disabled: #cccccc,
+      icon: #666666
+    ),
+    light: (
+      primary: #ffffff,
+      secondary: rgba(255, 255, 255, 0.8),
+      hint: rgba(255, 255, 255, 0.6),
+      disabled: rgba(255, 255, 255, 0.4),
+      icon: rgba(255, 255, 255, 0.8)
+    )
+  )
+);
+
+// 2. Typography
+@use '@material/typography/typography' with (
+  $font-family: string.unquote('"Inter", sans-serif'),
+  $styles-button: (
+    font-size: 14px,
+    font-weight: 500,
+    text-transform: none,
+    letter-spacing: 0
+  )
+);
+
+// 3. Component Overrides
+@use '@material/button/button-shared-theme' with (
+  $height: 48px,
+  $shape-radius: 24px, // Pill shape buttons
+  $contained-horizontal-padding: 32px
+);
+
+@use '@material/textfield/theme' as textfield-theme with (
+  $shape-radius: 12px
+);
+
+// 4. Import BalmUI
+// @use 'balm-ui/src/styles/balm-ui'; // Adjust path as needed
+
+// 5. Minor CSS Overrides
+.mdc-card {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05); // Softer shadows
+  border: 1px solid #eaeaea;
+}

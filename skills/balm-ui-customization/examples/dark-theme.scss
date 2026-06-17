@@ -1,0 +1,52 @@
+// examples/dark-theme.scss
+// A sleek, modern dark theme example for BalmUI
+
+@use 'sass:string';
+
+// 1. Theme Variables
+@use '@material/theme/theme-color' with (
+  $primary: #bb86fc, // Purple 200
+  $secondary: #03dac6, // Teal 200
+  $background: #121212,
+  $surface: #1e1e1e,
+  $error: #cf6679,
+  $text-colors: (
+    dark: (
+      primary: rgba(white, 0.87),
+      secondary: rgba(white, 0.60),
+      hint: rgba(white, 0.38),
+      disabled: rgba(white, 0.38),
+      icon: rgba(white, 0.38)
+    ),
+    light: (
+      primary: black,
+      secondary: rgba(black, 0.7),
+      hint: rgba(black, 0.5),
+      disabled: rgba(black, 0.5),
+      icon: rgba(black, 0.5)
+    )
+  )
+);
+
+// 2. Typography
+@use '@material/typography/typography' with (
+  $font-family: string.unquote('"Roboto", "Helvetica Neue", sans-serif')
+);
+
+// 3. Component Overrides
+@use '@material/button/button-shared-theme' with (
+  $shape-radius: 4px
+);
+
+@use '@material/card/card-theme' with (
+  $shape-radius: 8px
+);
+
+// 4. Finally import BalmUI (or individual components)
+// @use 'balm-ui/src/styles/balm-ui'; // Adjust path as needed
+
+// 5. Minor CSS Overrides (if needed)
+body {
+  background-color: #121212;
+  color: rgba(255, 255, 255, 0.87);
+}
