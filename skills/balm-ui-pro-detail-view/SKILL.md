@@ -13,8 +13,9 @@ In BalmUI Pro, detail pages (such as user profiles or read-only order summaries)
 ## 🔍 Discovery & Investigation Protocol (CRITICAL)
 
 Before building a detail view:
-1. **Discover Constants**: Ensure you check `app/scripts/constants/` because read-only detail views often require mapping integers back to human-readable strings using `$constant.useMap()`.
-2. **Discover API Models**: Ensure the `model` property aligns with the `$apiModel` registry.
+1. **Verify Component Schema**: Always check the source code in `node_modules/balm-ui/src` or `node_modules/balm-ui-pro/src` if you are unsure about a component's props or configuration schema. If referencing existing project files, verify the actual implementations in the workspace instead of hallucinating options.
+2. **Discover Constants**: Ensure you check `app/scripts/constants/` because read-only detail views often require mapping integers back to human-readable strings using `$constant.useMap()`.
+3. **Discover API Models**: Ensure the `model` property aligns with the `$apiModel` registry.
 
 ## Step-by-Step Workflow
 
@@ -71,3 +72,4 @@ Unlike `ui-form-view` which often receives a `v-model`, `ui-detail-view` typical
 ## Anti-Patterns
 - ❌ **Anti-pattern**: Manually writing `<div class="row"><label>Name</label><span>{{ data.name }}</span></div>` repeatedly for 20 fields.
 - ❌ **Anti-pattern**: Attempting to use `<ui-form-view>` with all inputs set to `disabled="true"` just to show data. Use `<ui-detail-view>` instead.
+- ❌ **Anti-pattern**: Guessing form configuration properties. If you don't know the exact schema, verify it by reading the actual source code or `form-config/` JSON files in the workspace.

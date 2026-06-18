@@ -13,8 +13,9 @@ In BalmUI Pro, list views are **Data & Config Driven**. You should almost never 
 ## 🔍 Discovery & Investigation Protocol (CRITICAL)
 
 Before building a list view:
-1. **Discover APIs**: Check `app/scripts/apis/content/` to ensure the API model you intend to use (e.g., `user`) is registered. The `<ui-list-view>` relies on this registration to fire HTTP requests.
-2. **Discover Form Configs**: Check `app/scripts/pages/` or `app/scripts/form-config/` to see if a search form config array exists for the `model-path` property.
+1. **Verify Component Schema**: Always check the source code in `node_modules/balm-ui/src` or `node_modules/balm-ui-pro/src` if you are unsure about a component's props or configuration schema. If referencing existing project files, verify the actual implementations in the workspace instead of hallucinating options.
+2. **Discover APIs**: Check `app/scripts/apis/content/` to ensure the API model you intend to use (e.g., `user`) is registered. The `<ui-list-view>` relies on this registration to fire HTTP requests.
+3. **Discover Form Configs**: Check `app/scripts/pages/` or `app/scripts/form-config/` to see if a search form config array exists for the `model-path` property.
 
 ## Step-by-Step Workflow
 
@@ -81,3 +82,4 @@ data() {
 ## Anti-Patterns & Verification
 - ❌ **Anti-pattern**: Writing `<table class="mdc-data-table">` manually for a standard backend list page.
 - ❌ **Anti-pattern**: Manually doing `axios.get('/api/xxx/list')` inside `mounted()` instead of letting `ui-list-view` handle it via the `model` prop.
+- ❌ **Anti-pattern**: Guessing form or action configuration properties. If you don't know the exact schema, verify it by reading the actual source code or `form-config/` JSON files in the workspace.

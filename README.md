@@ -28,6 +28,9 @@ Guide for adding and configuring new pages, routes, and modifying the dynamic si
 ### `balm-ui-pro-apis`
 Guide for utilizing the `$apiModel` plugin to define and interact with backend APIs, strictly decoupling HTTP requests from UI components.
 
+### `balm-ui-pro-module` ⭐
+Meta-skill that orchestrates all BalmUI Pro skills above to scaffold a **complete CRUD business module** (constants → APIs → mocking → form config → list/detail/form views → routing) in one dependency-ordered pipeline.
+
 ## Directory Structure
 
 - `skills/`: Contains the actual skill packages (e.g., `balm-ui-customization/`). Each skill has its own `SKILL.md` and related reference/example files.

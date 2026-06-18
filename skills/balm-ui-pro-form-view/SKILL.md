@@ -13,7 +13,8 @@ In BalmUI Pro, forms are built by passing an array of configurations to `<ui-for
 ## 🔍 Discovery & Investigation Protocol (CRITICAL)
 
 Before building a form view:
-- **Discover Complex Components**: Use `list_dir` to check `app/scripts/form-components/` to see if there are pre-existing complex form components (like image uploaders or custom pickers) that you should use instead of building from scratch.
+1. **Verify Component Schema**: Always check the source code in `node_modules/balm-ui/src` or `node_modules/balm-ui-pro/src` if you are unsure about a component's props or configuration schema. If referencing existing project files, verify the actual implementations in the workspace instead of hallucinating options.
+2. **Discover Complex Components**: Use `list_dir` to check `app/scripts/form-components/` to see if there are pre-existing complex form components (like image uploaders or custom pickers) that you should use instead of building from scratch.
 
 ## Step-by-Step Workflow
 
@@ -98,3 +99,4 @@ methods: {
 ## Anti-Patterns
 - ❌ **Anti-pattern**: Writing out 20 `<ui-textfield>` tags in the template for a standard form.
 - ❌ **Anti-pattern**: Creating custom submit buttons outside the `<ui-form-view>` and manually trying to trigger form validation.
+- ❌ **Anti-pattern**: Guessing form configuration properties. If you don't know the exact schema (e.g., `component: 'ui-textfield'` vs `type: 'text'`), verify it by reading the actual source code or `form-config/` JSON files in the workspace.
